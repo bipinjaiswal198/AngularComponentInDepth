@@ -1,8 +1,9 @@
-<app-blog-post-tile *ngFor="let post of blogpost"
+<app-blog-post-tile *ngFor="let post of blogpost[currentPage]"
 [blogpost]="post"></app-blog-post-tile>
 
 enter value:<input type="text" [(ngModel)]="testValue">{{testValue}}
-<app-paginator></app-paginator>
+<app-paginator [numberOfPages]="blogpost.length" 
+                (pageNumberClick)="updatePage($event)"></app-paginator>
 
 
 

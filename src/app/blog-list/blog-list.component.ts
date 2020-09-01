@@ -7,7 +7,8 @@ import { BlogPost } from '../blog-post';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit,OnChanges {
-  blogpost:BlogPost[]=[];
+  blogpost:BlogPost[][];
+  currentPage:number;
    testValue:string="inivalue"; //for testing purpose only
   constructor() { }
 
@@ -19,9 +20,128 @@ export class BlogListComponent implements OnInit,OnChanges {
    
 
   ngOnInit(): void {
-    this.blogpost.push(new BlogPost('blogpost1','summary1 for articulation of various things and cjdhdhdhh'));
-    this.blogpost.push(new BlogPost('blogpost2','summary2 invaluable learning from this article will benefir for sure.'));
-    this.blogpost.push(new BlogPost('blogpost3','summary3'));
+    this.currentPage=0;
+    this.blogpost = [
+
+      // Page 1
+
+      [
+
+        {
+
+          title: 'Post 1',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 2',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 3',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 4',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        }
+
+      ],
+
+      // Page 2
+
+      [
+
+        {
+
+          title: 'Post 5',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 6',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 7',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 8',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        }
+
+      ],
+
+      // Page 3
+
+      [
+
+        {
+
+          title: 'Post 9',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 10',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 11',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        },
+
+        {
+
+          title: 'Post 12',
+
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis turpis at ipsum hendrerit, vel porttitor velit ultrices.'
+
+        }
+
+      ]
+
+    ];
+  }
+
+  updatePage(newPage){
+    this.currentPage=newPage;
   }
 
 }
