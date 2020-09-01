@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import {BlogPost} from '../blog-post'
 import { TruncatePipe } from '../truncate.pipe';
 
@@ -22,5 +22,7 @@ export class BlogPostTileComponent implements OnInit {
   showFullSummary(){
     this.blogpost.summary=this.fullSummary;
   }
+
+  
 
 }

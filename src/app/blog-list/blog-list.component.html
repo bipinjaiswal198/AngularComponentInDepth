@@ -1,5 +1,11 @@
-<app-blog-post-tile *ngFor="let post of blogpost[currentPage]"
-[blogpost]="post"></app-blog-post-tile>
+<a href="#" (click)="expandAll()">Expand All</a>
+
+<app-blog-post-tile 
+*ngFor="let post of blogpost[currentPage]"
+[blogpost]="post" #tile></app-blog-post-tile>
+
+
+
 
 enter value:<input type="text" [(ngModel)]="testValue">{{testValue}}
 <app-paginator [numberOfPages]="blogpost.length" 

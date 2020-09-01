@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import { BlogPost } from '../blog-post';
+import { BlogPostTileComponent } from '../blog-post-tile/blog-post-tile.component';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,6 +10,7 @@ import { BlogPost } from '../blog-post';
 export class BlogListComponent implements OnInit,OnChanges {
   blogpost:BlogPost[][];
   currentPage:number;
+  @ViewChildren('tile') blogPostChildComponent:QueryList<BlogPostTileComponent>;
    testValue:string="inivalue"; //for testing purpose only
   constructor() { }
 
@@ -143,5 +145,11 @@ export class BlogListComponent implements OnInit,OnChanges {
   updatePage(newPage){
     this.currentPage=newPage;
   }
+
+  expandAll(){
+    this.blogPostChildComponent.forEach( e=> e.showFullSummary());
+  }
+
+  
 
 }
