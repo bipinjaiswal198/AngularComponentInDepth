@@ -23,6 +23,9 @@ export class BlogPostTileComponent implements OnInit {
     this.blogpost.summary=this.fullSummary;
   }
 
-  
+  toggleFav(){
+    this.blogpost.isFav=!this.blogpost.isFav;
+
+  }
 
 }
