@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, QueryList, ViewChildren, ChangeDetectionStrategy, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
 import { BlogPost } from '../blog-post';
 import { BlogPostTileComponent } from '../blog-post-tile/blog-post-tile.component';
 import { BlogDataService } from '../blog-data.service';
@@ -36,6 +36,14 @@ export class BlogListComponent implements OnInit,OnChanges {
 
   expandAll(){
     this.blogPostChildComponent.forEach( e=> e.showFullSummary());
+  }
+
+  FavAll(){
+    this.blogpost[this.currentPage]=this.blogpost[this.currentPage].map(post=>({
+      title:post.title,
+      summary:post.summary,
+      isFav:true
+    }));
   }
 
   

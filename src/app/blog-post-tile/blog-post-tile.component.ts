@@ -1,11 +1,13 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation, ɵisDefaultChangeDetectionStrategy,ChangeDetectionStrategy } from '@angular/core';
 import {BlogPost} from '../blog-post'
 import { TruncatePipe } from '../truncate.pipe';
 
 @Component({
   selector: 'app-blog-post-tile',
   templateUrl: './blog-post-tile.component.html',
-  styleUrls: ['./blog-post-tile.component.scss']
+  styleUrls: ['./blog-post-tile.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
+  
 })
 export class BlogPostTileComponent implements OnInit {
 
